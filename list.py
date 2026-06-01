@@ -1,17 +1,17 @@
-students =["dipak","kartik","satyarth","satyarth","satyarth"]
+students =["dipak","kartik","satyarth","pratik",]
 print(students)
 print (students[0])
 print (students[1])
 print (students[2])
 print (students[3])
-print (students[4])
+
 
 #Loop -TO print all the elements in the list
 for student in students:
     print(f"hello {student} Welcome to the class")  
 
 
-marks=[98,99,95,90]
+marks=[98,56,78,45]
 for i in marks:
     if i>=90:
         print(f"Excellent! You got {i} marks")
