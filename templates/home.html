@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title %}Home - College portal{% endblock %}
+{% block content %}
+<h1>Welcome to the College Portal</h1>
+<p>Total students : {{students | length}}</p>
+<h2>Quick stats</h2>
+<ul>
+    {%for student in students %}
+    <li>
+        {{student.name}} -
+        {{student.marks}}marks -
+        {% if student .marks>=90 %}
+        Excellent
+        {% elif student.marks >= 80 %} 
+        Good
+        {% elif student.marks >= 60 %}
+        Average
+        {% else %}
+        Poor
+        {% endif %}
+    </li>
+</ul>

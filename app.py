@@ -1,11 +1,11 @@
-from flask import Flask
+from flask import Flask, render_template
 import flask
 
 app= Flask(__name__)
 
-#project dada - dictionary dynamic
+#project data - dictionary dynamic
 
-stud=[
+studentss=[
     {"name":"Rahul","marks":95,"Roll no":1},
     {"name":"Satyarth","marks":85,"Roll no":2},
     {"name":"Pratik","marks":75,"Roll no":3},
@@ -14,20 +14,19 @@ stud=[
 ]
 
 @app.route('/')
-
 def home():
     #Creat using HTml
-    
+    return  render_template ("home.html")
+
 
     return '<h1>Colage Portal</h1>'
 
 @app.route('/about')
 def about():
-    return '<h1>About Us</h1><p>This is Collage management system.</p>'
+    return render_template('about.html')
 
 @app.route('/Students')
 def Students():
-    return '<h1>Students list</h1><p>Student will show here.</p>'
-
+    return render_template('Students.html', students=studentss)
 if __name__=="__main__":
     app.run(debug=True)
