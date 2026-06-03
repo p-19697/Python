@@ -25,6 +25,8 @@ def student_login():
             print("Attendence:",attendence[i])
             print("Notice Board")
             print(notice)
+            print("Thank you for using the student portal")
+        
             return 
         else :
              print("login unsuccesssfully")
