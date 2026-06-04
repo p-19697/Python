@@ -21,5 +21,6 @@ elif percentage >= 45:
 else:
             print("Result = Fail")
             print("Better luck next time")
+        
             
 
