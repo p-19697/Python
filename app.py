@@ -1,34 +1,44 @@
 from flask import Flask
 
-app= Flask (__name__)
+app = Flask(__name__)
 
-#project data - dynamic data insert 
-stud=[
-    {"name":"Dipak","roll no":101,"marks":98},
-    {"name":"Aarti","roll no":102,"marks":99},
-    {"name":"Pranjali","roll no":103,"marks":97},
-    {"name":"Rohit","roll no":104,"marks":93},
+# Student Records
+students = [
+    {"name": "Pranjali", "course": "Computer Engineering", "year": "2nd Year"},
+    {"name": "Aarti", "course": "Mechanical Engineering", "year": "3rd Year"},
+    {"name": "Dhanashree", "course": "Civil Engineering", "year": "1st Year"},
+    {"name": "Poonam", "course": "Electronics Engineering", "year": "2nd Year"}
 ]
 
+# Route 1 - Homepage
 @app.route('/')
 def home():
-    html = '<h1>College Smart Portal - Students</h1>'
-    html += '<ul>'
+    return """
+    <h1>College Smart Portal</h1>
+    <p>Welcome to the College Smart Portal.</p>
+    <p>This portal provides student information, courses, and notices.</p>
+    """
 
-    for student in stud:
-        html += f"<li>{student['name']} - Roll No: {student['roll no']} - Marks: {student['marks']}</li>"
+# Route 2 - Student Records
+@app.route('/records')
+def records():
+    html = "<h1>Student Records</h1><ul>"
 
-    html += '</ul>'
-    return html 
+    for student in students:
+        html += f""" <li>  Name: {student['name']} | Course: {student['course']} | Year: {student['year']} </li>
+        """
 
-@app.route('/about')
-def about():
-    return '<h1>About college smart portal<h1><p>This is college management system</p>'
+    html += "</ul>"
+    return html
 
-@app.route('/student')
-def student():
-    return '<h1> student list<h1> <p> All students will be shown here</p>'
-
+# Route 3 - Notice Board
+@app.route('/notice')
+def notice():
+    return """
+    <h1>Notice Board</h1>
+    <p>Semester Examination will start from 15 June 2026.</p>
+    <p>Project submission last date is 10 June 2026.</p>
+    """
 
 if __name__ == '__main__':
-   app.run(debug=True)
+    app.run(debug=True)
