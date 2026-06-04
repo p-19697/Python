@@ -1,9 +1,9 @@
 #collage smart portal project
 #Student details
-student=["Pranjali","Aarti","Dhanashree","Pavan"]
-roll_no=[101,102,103,104]
-marks=[98,99,95,90]
-attendence=[68,70,75,80]
+student=["Pranjali","Aarti","Dhanashree","Pavan,Rudra"]
+roll_no=[101,102,103,104,105]
+marks=[98,99,95,90,92]
+attendence=[68,70,75,80,68]
 
 notice=[ "Semester Exam starts from 15 June",
     "Submit assignment before 10 June",
