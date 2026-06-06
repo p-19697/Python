@@ -1,44 +1,31 @@
-from flask import Flask
+from flask import Flask,render_template
 
 app = Flask(__name__)
 
 # Student Records
-students = [
-    {"name": "Pranjali", "course": "Computer Engineering", "year": "2nd Year"},
-    {"name": "Aarti", "course": "Mechanical Engineering", "year": "3rd Year"},
-    {"name": "Dhanashree", "course": "Civil Engineering", "year": "1st Year"},
-    {"name": "Poonam", "course": "Electronics Engineering", "year": "2nd Year"}
+stud = [
+    {"name": "Pranjali", "roll": 1, "marks": 96},
+   {"name": "Aarti", "roll": 2, "marks": 90},
+   {"name": "Dhanasree", "roll": 3, "marks": 89},
+   {"name": "Poonam1", "roll": 4, "marks": 88},
 ]
 
 # Route 1 - Homepage
 @app.route('/')
 def home():
-    return """
-    <h1>College Smart Portal</h1>
-    <p>Welcome to the College Smart Portal.</p>
-    <p>This portal provides student information, courses, and notices.</p>
-    """
-
+    return render_template('home.html')
+    
 # Route 2 - Student Records
-@app.route('/records')
-def records():
-    html = "<h1>Student Records</h1><ul>"
-
-    for student in students:
-        html += f""" <li>  Name: {student['name']} | Course: {student['course']} | Year: {student['year']} </li>
-        """
-
-    html += "</ul>"
-    return html
+@app.route('/about')
+def about():
+      return render_template('about.html')
 
 # Route 3 - Notice Board
-@app.route('/notice')
-def notice():
-    return """
-    <h1>Notice Board</h1>
-    <p>Semester Examination will start from 15 June 2026.</p>
-    <p>Project submission last date is 10 June 2026.</p>
-    """
+@app.route('/student')
+def student():
+    return render_template('student.html', students=stud)
 
 if __name__ == '__main__':
-    app.run(debug=True)
+     print("INSIDE MAIN")
+     app.run(debug=True)
+

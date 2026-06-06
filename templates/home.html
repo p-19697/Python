@@ -1,23 +1,24 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block title %}Home - College portal{% endblock %}
+{% block title %}Home - ollege portal {% endblock %}
+
 {% block content %}
-<h1>Welcome to the College Portal</h1>
-<p>Total students : {{students | length}}</p>
+<h1>Welcom to College smart portal</h1>
+<p>Total student : {{students|length}}</p>
 <h2>Quick stats</h2>
 <ul>
-    {%for student in students %}
+    {% for student in students %}
     <li>
-        {{student.name}} -
-        {{student.marks}}marks -
-        {% if student .marks>=90 %}
-        Excellent
-        {% elif student.marks >= 80 %} 
+        {{student.name}} - 
+        {{student.marks}} marks -
+        {% if student.marks>= 75 %}
         Good
         {% elif student.marks >= 60 %}
-        Average
+        average
         {% else %}
-        Poor
+        Needs Improvement
         {% endif %}
     </li>
+    {% endfor %}
 </ul>
+{% endblock %}

@@ -34,3 +34,4 @@ def greet(name):
 
 for student_name in students:
     greet(student_name)
+    
