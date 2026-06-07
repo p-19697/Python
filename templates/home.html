@@ -1,24 +1,15 @@
-{% extends 'base.html' %}
-
-{% block title %}Home - ollege portal {% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
-<h1>Welcom to College smart portal</h1>
-<p>Total student : {{students|length}}</p>
-<h2>Quick stats</h2>
-<ul>
-    {% for student in students %}
-    <li>
-        {{student.name}} - 
-        {{student.marks}} marks -
-        {% if student.marks>= 75 %}
-        Good
-        {% elif student.marks >= 60 %}
-        average
-        {% else %}
-        Needs Improvement
-        {% endif %}
-    </li>
-    {% endfor %}
-</ul>
+<h1>GOVERNMENT POLYTECHNIC,HINGOLI</h1>
+<h2>Welcome to College Smart Portal</h2>
+
+<h3><p>
+This portal helps students to view their academic records,
+department information and latest college notices.
+<br>
+Students can easily access all important information
+through this portal.
+</p></h3>
+
 {% endblock %}

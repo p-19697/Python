@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>College Notice Board</h1>
+
+<h2><p>
+Welcome to the Notice Board section.
+Here students can find all important announcements,
+exam schedules, project submission dates and college events.
+Please check this page regularly for updates.
+</p></h2>
+
+<h3>
+<ul>
+    {% for notice in notices %}
+        <li>{{ notice }}</li>
+    {% endfor %}
+</ul>
+</h3>
+<br>
+<a href="{{ url_for('home') }}">← Back to Home</a>
+
+{% endblock %}
