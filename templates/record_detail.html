@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Student Details
+{% endblock %}
+
+{% block content %}
+
+<h2>Student Details</h2>
+
+{% if student %}
+
+<p><b>ID:</b> {{ student.id }}</p>
+
+<p><b>Name:</b> {{ student.name }}</p>
+
+<p><b>Department:</b> {{ student.department }}</p>
+
+<p><b>Attendance:</b> {{ student.attendance }}</p>
+
+<p><b>Marks:</b> {{ student.marks }}</p>
+
+{% else %}
+
+<p>Student record not found.</p>
+
+{% endif %}
+
+<a href="{{ url_for('records') }}">
+Back to Records
+</a>
+
+{% endblock %}
