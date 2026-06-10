@@ -5,15 +5,21 @@ Home Page
 {% endblock %}
 
 {% block content %}
+<div class=d-flex justify-content-between align-items-center mb-r>
 
 <h2>Welcome to College Smart Portal</h2>
+<a href="{{url_for('records')}}" class="btn btn-primary">View records</a>
 
+
+</div>
+</div>
+<span class ="badge bg-secondary fs-6">
 <p>
 <h3>
 College Smart Portal is a student management system. The portal helps college to
 maintain student information and their records.<br>
 for students they can see their record,details and academic schedule also.
-</h3></p>
+</h3></p></span>
 
 <p><h3>
 This portal use to  view student records,

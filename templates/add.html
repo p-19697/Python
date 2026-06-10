@@ -5,33 +5,35 @@ Add Student
 {% endblock %}
 
 {% block content %}
-
-<h2>Add New Student</h2>
-
-<p>
-This page contains a sample form for adding
-a new student record. The form is currently
-for display purposes only.
-</p>
-
-<form>
-
-<label>Student Name:</label><br>
-<input type="text"><br><br>
-
-<label>Department:</label><br>
-<input type="text"><br><br>
-
-<label>Attendance:</label><br>
-<input type="text"><br><br>
-
-<label>Marks:</label><br>
-<input type="number"><br><br>
-
-<button type="submit">
-Add Student
-</button>
-
-</form>
+<div class="d-flex justify-content-center align-items-center mb-4">
+    <div class="col-md-8">
+        <div class="card shadow">
+            <div class="card-header card-center bg-secondary text-white">
+                <h2>Add New Student</h2>
+                <div class="card-body">
+                       <p class="card-text">This page contains a sample for
+                          adding a new student record. The form is currently
+                         for display purposes
+                          <form>
+                             <label>Student Name:</label><br>
+                             <input type="text"><br><br>
+                             <label>Department:</label><br>
+                              <input type="text"><br><br>
+                              <label>Attendance:</label><br>
+                              <input type="text"><br><br>
+                              <label>Marks:</label><br>
+                              <input type="number"><br><br>
+                               <button type="submit">
+                                  Add Student
+                                </button>
+                            </form>
+                            <a href="{{url_for('home')}}"
+                            class="btn btn-primary mt-3">Back to home</a>
+                     </p> 
+                </div> 
+            </div>
+        </div>
+    </div>
+</div>
 
 {% endblock %}

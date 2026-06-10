@@ -25,7 +25,7 @@ def add():
     return render_template("add.html")
 
 @app.route("/record/<int:id>")
-def record(id):
+def record(id): 
     student = None
 
     for s in students:
