@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h2>Important College Notices</h2>
+
+<div class="list-group">
+
+{% for notice in notices %}
+
+<div class="list-group-item">
+{{ notice }}
+</div>
+
+{% endfor %}
+
+</div>
+
+{% endblock %}

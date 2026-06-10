@@ -1,43 +1,36 @@
 {% extends 'base.html' %}
 
-{% block title %}
-Student Records
-{% endblock %}
-
 {% block content %}
 
-<h2>Student Records</h2>
+<h2 class="mb-4">Student Records</h2>
 
-<table class="table table-striped table-hover" border="1" cellpadding="10">
-    <thead class="table-dark">
+<table class="table table-bordered table-hover">
+
+<thead class="table-success">
 <tr>
-    <th>ID</th>
-    <th>Name</th>
-    <th>Department</th>
-    <th>Attendance</th>
-    <th>Marks</th>
-    <th>Details</th>
+<th>Student ID</th>
+<th>Name</th>
+<th>Department</th>
+<th>Year</th>
+<th>Attendance</th>
+<th>CGPA</th>
 </tr>
 </thead>
 
+<tbody>
+
 {% for student in students %}
-
 <tr>
-    <td class="fw-bold">{{ student.id }}</td>
-    <td class="fw-bold">{{ student.name }}</td>
-    <td class="fw-bold">{{ student.department }}</td>
-    <td class="fw-bold">{{ student.attendance }}</td>
-    <td class="fw-bold">{{ student.marks }}</td>
-    
-    <td>
-        <a href="{{ url_for('record', id=student.id) }}">
-            View
-        </a>
-    </td>
+<td>{{ student.id }}</td>
+<td>{{ student.name }}</td>
+<td>{{ student.department }}</td>
+<td>{{ student.year }}</td>
+<td>{{ student.attendance }}</td>
+<td>{{ student.cgpa }}</td>
 </tr>
-
-
 {% endfor %}
+
+</tbody>
 
 </table>
 

@@ -1,13 +1,71 @@
-{% extends 'base.html'%}
-
-{% block title %} About - College Smart Portal {% endblock %}
+{% extends 'base.html' %}
 
 {% block content %}
-<h1>About College Portal</h1>
-<p>College portal is a platform to manage student information and academic schedule</p>
-<p><a href="{url_for('home')}"><--back to Home </a></p>
-</p></a></p>
-{% endblock %} 
 
+<h2>About Government Polytechnic Hingoli</h2>
 
+<p>
+Government Polytechnic Hingoli is one of the leading technical
+institutions in Maharashtra. The institute provides quality
+technical education and practical training to students in
+various engineering disciplines.
+</p>
 
+<p>
+The college is committed to developing skilled professionals
+through academic excellence, industry-oriented learning,
+modern laboratories, and placement support activities.
+</p>
+
+<h3 class="mt-4">College Information</h3>
+
+<table class="table table-bordered table-striped">
+
+<tr>
+<th>College Name</th>
+<td>{{ college.name }}</td>
+</tr>
+
+<tr>
+<th>Location</th>
+<td>{{ college.location }}</td>
+</tr>
+
+<tr>
+<th>Established</th>
+<td>{{ college.established }}</td>
+</tr>
+
+<tr>
+<th>Affiliation</th>
+<td>{{ college.affiliation }}</td>
+</tr>
+
+<tr>
+<th>Departments</th>
+<td>{{ college.departments }}</td>
+</tr>
+
+<tr>
+<th>Courses</th>
+<td>{{ college.courses }}</td>
+</tr>
+
+<tr>
+<th>Library Books</th>
+<td>{{ college.library_books }}</td>
+</tr>
+
+<tr>
+<th>Computer Labs</th>
+<td>{{ college.computer_labs }}</td>
+</tr>
+
+<tr>
+<th>Status</th>
+<td>{{ college.status }}</td>
+</tr>
+
+</table>
+
+{% endblock %}

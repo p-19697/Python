@@ -1,36 +1,80 @@
 {% extends 'base.html' %}
 
-{% block title %}
-Home Page
-{% endblock %}
-
 {% block content %}
-<div class=d-flex justify-content-between align-items-center mb-r>
 
-<h2>Welcome to College Smart Portal</h2>
-<a href="{{url_for('records')}}" class="btn btn-primary">View records</a>
+<div class="text-center">
 
+<h1 class="text-success">
+Government Polytechnic Hingoli
+</h1>
 
-</div>
-</div>
-<span class ="badge bg-secondary fs-6">
 <p>
-<h3>
-College Smart Portal is a student management system. The portal helps college to
-maintain student information and their records.<br>
-for students they can see their record,details and academic schedule also.
-</h3></p></span>
+Government Polytechnic Hingoli is one of the leading technical
+institutions in Maharashtra, providing quality diploma education
+in various engineering disciplines. The institute focuses on
+academic excellence, practical knowledge, skill development,
+and industry-oriented learning.
+</p>
 
-<p><h3>
-This portal use to  view student records,
-attendance details, marks, department information,important announcements and notices.
-<br>Which helps students to see academic shcedule their records etc.
-</h3></p>
+<p>
+The College Smart Portal is developed to manage college information,
+student records, academic notices, and departmental details through
+a centralized digital platform. The portal helps students and staff
+access important information quickly and efficiently.
+</p>
 
-<p><h3>
-The main objective of this project is to simplify
-student record management and provide a user-friendly
-interface for accessing academic information.
-</h3></p>
+</div>
+
+<div class="row mt-4">
+
+<div class="col-md-3">
+<div class="card shadow">
+<div class="card-body text-center">
+<h4>520+</h4>
+<span class="badge bg-primary">Students</span>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow">
+<div class="card-body text-center">
+<h4>3</h4>
+<span class="badge bg-success">Departments</span>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow">
+<div class="card-body text-center">
+<h4>35+</h4>
+<span class="badge bg-warning">Faculty</span>
+</div>
+</div>
+</div>
+
+<div class="col-md-3">
+<div class="card shadow">
+<div class="card-body text-center">
+<h4>92%</h4>
+<span class="badge bg-info">Placement</span>
+</div>
+</div>
+</div>
+
+</div>
+
+<hr>
+
+<h3>College Facilities</h3>
+
+<ul class="list-group">
+<li class="list-group-item">Modern Computer Laboratories</li>
+<li class="list-group-item">Digital Library with 15000+ Books</li>
+<li class="list-group-item">Training and Placement Cell</li>
+<li class="list-group-item">Smart Classrooms</li>
+<li class="list-group-item">Sports and Cultural Activities</li>
+</ul>
 
 {% endblock %}
