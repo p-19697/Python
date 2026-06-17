@@ -16,14 +16,31 @@ College Smart Portal
 </a>
 
 <div>
-<a class="btn btn-light me-2" href="/">Home</a>
-<a class="btn btn-light me-2" href="/records">Records</a>
+<a class="btn btn-primary me-2" href="/">Home</a>
+<a class="btn btn-secondary me-2" href="/records">Records</a>
 <a class="btn btn-warning me-2" href="/notice">Notice Board</a>
 <a class="btn btn-info" href="/about">About College</a>
+<a class="btn btn-danger" href="/add">Add Student</a>
 </div>
 
 </div>
 </nav>
+
+  {% with messages = get_flashed_messages(with_categories=true) %}
+{% if messages %}
+    {% for category, message in messages %}
+    <div class="alert alert-{{ category }} alert-dismissible fade show" role="alert">
+        {{ message }}
+        <button type="button"
+                class="btn-close"
+                data-bs-dismiss="alert"
+                aria-label="Close">
+        </button>
+    </div>
+    {% endfor %}
+{% endif %}
+{% endwith %}
+
 
 <div class="container mt-4">
 {% block content %}
@@ -37,6 +54,7 @@ Government Polytechnic Hingoli |
 Academic Management System
 </p>
 </footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 </html>

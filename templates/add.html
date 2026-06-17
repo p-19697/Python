@@ -1,38 +1,99 @@
-{% extends 'base.html' %}
-
-{% block title %}
-Add Student
-{% endblock %}
+{% extends "base.html" %}
 
 {% block content %}
-<div class="d-flex justify-content-center align-items-center mb-4">
-    <div class="col-md-8">
-        <div class="card shadow">
-            <div class="card-header card-center bg-secondary text-white">
-                <h2>Add New Student</h2>
-                <div class="card-body">
-                       <p class="card-text">This page contains a sample for
-                          adding a new student record. The form is currently
-                         for display purposes
-                          <form>
-                             <label>Student Name:</label><br>
-                             <input type="text"><br><br>
-                             <label>Department:</label><br>
-                              <input type="text"><br><br>
-                              <label>Attendance:</label><br>
-                              <input type="text"><br><br>
-                              <label>Marks:</label><br>
-                              <input type="number"><br><br>
-                               <button type="submit">
-                                  Add Student
-                                </button>
-                            </form>
-                            <a href="{{url_for('home')}}"
-                            class="btn btn-primary mt-3">Back to home</a>
-                     </p> 
-                </div> 
+
+<div class="row justify-content-center">
+    <div class="col-md-7">
+
+        <div class="card shadow-lg">
+
+            <div class="card-header bg-secondary text-white">
+                <h4 class="mb-0">Add New Student</h4>
             </div>
+
+            <div class="card-body p-4">
+
+                <form action="{{ url_for('add') }}" method="POST">
+
+                    <!-- Student ID -->
+                    <div class="mb-3">
+                        <label class="form-label">Student ID</label>
+                        <input
+                            required
+                            name="id"
+                            class="form-control"
+                            placeholder="Enter Student ID"
+                            type="text">
+                    </div>
+
+                    <!-- Student Name -->
+                    <div class="mb-3">
+                        <label class="form-label">Student Name</label>
+                        <input
+                            required
+                            name="name"
+                            class="form-control"
+                            placeholder="Enter Student Name"
+                            type="text">
+                    </div>
+
+                    <!-- Department -->
+                    <div class="mb-3">
+                        <label class="form-label">Department</label>
+                        <input
+                            required
+                            name="department"
+                            class="form-control"
+                            placeholder="Enter Department"
+                            type="text">
+                    </div>
+
+                    <!-- Year -->
+                    <div class="mb-3">
+                        <label class="form-label">Year</label>
+                        <input
+                            required
+                            name="year"
+                            class="form-control"
+                            placeholder="Enter Year"
+                            type="text">
+                    </div>
+
+                    <!-- Attendance -->
+                    <div class="mb-3">
+                        <label class="form-label">Attendance (%)</label>
+                        <input
+                            required
+                            name="attendance"
+                            class="form-control"
+                            placeholder="Enter Attendance %"
+                            type="text">
+                    </div>
+
+                    <!-- CGPA -->
+                    <div class="mb-3">
+                        <label class="form-label">CGPA</label>
+                        <input
+                            required
+                            name="cgpa"
+                            class="form-control"
+                            placeholder="Enter CGPA"
+                            type="number"
+                            step="0.01"
+                            min="0"
+                            max="10">
+                    </div>
+
+                    <button type="submit" class="btn btn-success w-100">
+                        Add Student
+                    </button>
+
+                </form>
+
+            </div>
+
         </div>
+
     </div>
 </div>
 

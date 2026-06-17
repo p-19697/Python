@@ -1,6 +1,9 @@
-from flask import Flask, render_template
+from flask import Flask, render_template, request, flash, redirect, url_for
 
 app = Flask(__name__)
+app.secret_key = 'pranjali9325'
+
+
 
 college = {
     "name": "Government Polytechnic Hingoli",
@@ -67,5 +70,42 @@ def about():
         "about.html",
         college=college
     )
+
+
+@app.route("/add", methods=["GET", "POST"])
+def add():
+
+    if request.method == "POST":
+
+        student_id = request.form.get("id")
+        name = request.form.get("name")
+        department = request.form.get("department")
+        year = request.form.get("year")
+        attendance = request.form.get("attendance")
+        cgpa = request.form.get("cgpa")
+
+        # Validation - Empty Check
+        if not student_id or not name or not department or not year or not attendance or not cgpa:
+            flash("All fields are required!", "danger")
+            return redirect(url_for("add"))
+
+        new_student = {
+            "id": student_id,
+            "name": name,
+            "department": department,
+            "year": year,
+            "attendance": attendance,
+            "cgpa": cgpa
+        }
+
+        students.append(new_student)
+
+        # Success Flash Message
+        flash(f"Student {name} added successfully!", "success")
+
+        # Redirect After Submit
+        return redirect(url_for("records"))
+    return render_template("add.html")
+
 if __name__ == "__main__":
     app.run(debug=True)
