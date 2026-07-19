@@ -1,7 +1,8 @@
 from flask import Flask, render_template, request, flash, redirect, url_for
+from database import get_db , init_db
 
 app = Flask(__name__)
-app.secret_key = 'pranjali9325'
+app.secret_key = 'pranjali008'
 
 
 
@@ -88,7 +89,20 @@ def add():
         if not student_id or not name or not department or not year or not attendance or not cgpa:
             flash("All fields are required!", "danger")
             return redirect(url_for("add"))
+        
+        conn =  get_db()
 
+        conn.execute(''' INSERT INTO students
+                     (name, department, year, attendance, cgpa)VALUES (?, ?, ?, ?, ?)''',
+                     (name,department,year,int(attendance),float(cgpa))
+                    )
+        
+
+        conn.commit()
+        conn.close()
+
+
+        
         new_student = {
             "id": student_id,
             "name": name,
@@ -108,4 +122,5 @@ def add():
     return render_template("add.html")
 
 if __name__ == "__main__":
+    init_db()
     app.run(debug=True)
